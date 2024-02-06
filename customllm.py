@@ -6,7 +6,7 @@ from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 from langchain_core.language_models.llms import LLM
 
 class CustomLLM(LLM):
-    n: int = 1024
+    #n: int = 1024
 
     @property
     def _llm_type(self) -> str:
@@ -37,7 +37,7 @@ class CustomLLM(LLM):
         return response.json()[0]['generated_text']
         #return prompt[: self.n]
 
-    @property
-    def _identifying_params(self) -> Mapping[str, Any]:
-        """Get the identifying parameters."""
-        return {"n": self.n}
+    #@property
+    #def _identifying_params(self) -> Mapping[str, Any]:
+    #    """Get the identifying parameters."""
+    #    return {"n": self.n}
